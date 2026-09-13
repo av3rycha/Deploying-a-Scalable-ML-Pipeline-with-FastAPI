@@ -1,11 +1,10 @@
-import os
-
 import pandas as pd
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
 
 from ml.data import apply_label, process_data
 from ml.model import inference, load_model
+
 
 # DO NOT MODIFY
 class Data(BaseModel):
@@ -26,6 +25,7 @@ class Data(BaseModel):
     hours_per_week: int = Field(..., example=40, alias="hours-per-week")
     native_country: str = Field(..., example="United-States", alias="native-country")
 
+
 path = "./model/encoder.pkl"
 encoder = load_model(path)
 
@@ -33,14 +33,16 @@ path = "./model/model.pkl"
 model = load_model(path)
 
 
-app = FastAPI(title="Census Income Prediction API", description="An API that predicts whether an individual makes more than $50K a year based on census data.", version="1.0.0")
+app = FastAPI(title="Census Income Prediction API",
+              description="An API that predicts whether an individual makes more than $50K a year based on census data.",
+              version="1.0.0"
+              )
 
 
 @app.get("/")
 async def get_root():
     """ Say hello!"""
-    return{"greeting": "Hello, this is working!"}
-
+    return {"greeting": "Hello, this is working!"}
 
 
 @app.post("/data/")

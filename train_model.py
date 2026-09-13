@@ -37,7 +37,7 @@ cat_features = [
 
 
 X_train, y_train, encoder, lb = process_data(
-    data,
+    train,
     categorical_features=cat_features,
     label="salary",
     training=True,
@@ -64,7 +64,7 @@ save_model(encoder, encoder_path)
 # load the model
 model = load_model(
     model_path
-) 
+)
 
 
 preds = inference(model, X_test)

@@ -3,6 +3,7 @@ from sklearn.metrics import fbeta_score, precision_score, recall_score
 from ml.data import process_data
 from sklearn.linear_model import LogisticRegression
 
+
 # Optional: implement hyperparameter tuning.
 def train_model(X_train, y_train):
     """
@@ -74,7 +75,7 @@ def save_model(model, path):
     path : str
         Path to save pickle file.
     """
-    with open (path, "wb") as file:
+    with open(path, "wb") as file:
         pickle.dump(model, file)
 
 
@@ -83,7 +84,6 @@ def load_model(path):
     with open(path, "rb") as file:
         model = pickle.load(file)
     return model
-
 
 
 def performance_on_categorical_slice(
@@ -112,7 +112,7 @@ def performance_on_categorical_slice(
         Trained sklearn OneHotEncoder, only used if training=False.
     lb : sklearn.preprocessing._label.LabelBinarizer
         Trained sklearn LabelBinarizer, only used if training=False.
-    model : Logistic Regression 
+    model : Logistic Regression
         Model used for the task.
 
     Returns
@@ -124,11 +124,11 @@ def performance_on_categorical_slice(
     """
     X_slice, y_slice, _, _ = process_data(
         data[data[column_name] == slice_value],
-        categorical_features = categorical_features,
-        label = label,
+        categorical_features=categorical_features,
+        label=label,
         training=False,
-        encoder = encoder,
-        lb = lb
+        encoder=encoder,
+        lb=lb
     )
     preds = inference(model, X_slice)
     precision, recall, fbeta = compute_model_metrics(y_slice, preds)

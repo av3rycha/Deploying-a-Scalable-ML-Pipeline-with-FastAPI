@@ -1,4 +1,3 @@
-import pytest
 from train_model import data, cat_features, y_test, preds, model, X_test
 from ml.data import process_data
 from ml.model import compute_model_metrics, inference
@@ -9,7 +8,7 @@ def test_process_data_shape():
     Tests if original data has the same number of rows as the processed data.
 
     """
-    X,y, encoder, lb = process_data(
+    X, y, encoder, lb = process_data(
         data,
         categorical_features=cat_features,
         label="salary",
@@ -17,7 +16,6 @@ def test_process_data_shape():
     )
     assert X.shape[0] == data.shape[0]
     assert y.shape[0] == data.shape[0]
-    
 
 
 # TODO: implement the second test. Change the function name and input as needed
