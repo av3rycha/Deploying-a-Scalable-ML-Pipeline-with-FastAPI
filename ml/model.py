@@ -126,9 +126,9 @@ def performance_on_categorical_slice(
         data[data[column_name] == slice_value],
         categorical_features,
         label,
-        encoder, 
+        encoder,
+        training=False,
         lb,
-        training=False
     )
     preds = inference(model, X_slice)
     precision, recall, fbeta = compute_model_metrics(y_slice, preds)
