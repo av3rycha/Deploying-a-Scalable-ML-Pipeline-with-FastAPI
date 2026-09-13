@@ -12,7 +12,7 @@ Working in a command line environment is recommended for ease of use with git an
     * Make sure you set up the GitHub Action to have the same version of Python as you used in development.
 
 # Data
-* Download census.csv and commit it to dvc.
+* Download census.csv and commit it to dvc.ls
 * This data is messy, try to open it in pandas and see what you get.
 * To clean it, use your favorite text editor to remove all spaces.
 
@@ -27,3 +27,9 @@ Working in a command line environment is recommended for ease of use with git an
 *  Create a RESTful API using FastAPI this must implement:
     * GET on the root giving a welcome message.
     * POST that does model inference.
+
+# References
+* Code for Github action was found on: https://medium.com/algomart/ci-cd-for-python-projects-using-github-actions-4a2055ed2c05
+
+# Git Hub Repository Link
+* https://github.com/av3rycha/Deploying-a-Scalable-ML-Pipeline-with-FastAPI
