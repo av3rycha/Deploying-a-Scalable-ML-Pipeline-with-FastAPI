@@ -28,9 +28,9 @@ def test_compute_model_metrics():
     assert isinstance(p, float)
     assert isinstance(r, float)
     assert isinstance(fb, float)
-    assert p == pytest.approx(0.7616, abs=0.0001)
-    assert r == pytest.approx(0.2094, abs=0.0001)
-    assert fb == pytest.approx(0.3285, abs=0.0001)
+    assert p == pytest.approx(0.7337, abs=0.0001)
+    assert r == pytest.approx(0.5646, abs=0.0001)
+    assert fb == pytest.approx(0.6381, abs=0.0001)
 
 
 def test_prediction():

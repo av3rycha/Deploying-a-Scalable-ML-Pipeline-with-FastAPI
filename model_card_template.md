@@ -20,7 +20,7 @@ The data was divided into training and tests sets with an 80/20 split. The train
 
 ## Metrics
 
-The metrics used to evaluate performance are precision, recall, and F1 score. On the test dataset, the model achieved a precision of 0.7280, a recall of 0.2794, and an F1 score of 0.4039.
+The metrics used to evaluate performance are precision, recall, and F1 score. On the test dataset, the model achieved a precision of 0.7337, a recall of 0.5646, and an F1 score of 0.6381.
 
 ## Ethical Considerations
 
