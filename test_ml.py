@@ -19,7 +19,6 @@ def test_process_data_shape():
     assert y.shape[0] == data.shape[0]
 
 
-# TODO: implement the second test. Change the function name and input as needed
 def test_compute_model_metrics():
     """
     # Tests compute_model_metrics with known labels and predictions
