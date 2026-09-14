@@ -12,9 +12,11 @@ The model was developed as part of a machine learning project to demonstrate the
 
 ## Training Data
 
-This model was training using the Census Income dataset from the US Census Bureau. The dataset contains demographic and employment-related information including sex, race, age, work class, education, occupation, and salary.
+This model was training using the Census Income dataset from the US Census Bureau. The dataset contains demographic and employment-related information including sex, race, age, work class, education, occupation, and salary. Categorical features were encoded before being used by the model. The salary column was used as the target variable.
 
-Categorical features were encoded before being used by the model. The salary column was used as the target variable. The data was divided into training and tests sets with an 80/20 split. The training test was used to fit the logistic regresssion model while the test set was used to evaluate its performance.
+## Evaluation Data
+
+The data was divided into training and tests sets with an 80/20 split. The training test was used to fit the logistic regresssion model while the test set was used to evaluate its performance.
 
 ## Metrics
 
