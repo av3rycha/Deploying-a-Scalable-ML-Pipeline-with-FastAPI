@@ -1,4 +1,4 @@
-from train_model import data, cat_features, y_test, preds, model, X_test
+from train_model import data, cat_features, model, X_test
 from ml.data import process_data
 from ml.model import compute_model_metrics, inference
 import pytest
