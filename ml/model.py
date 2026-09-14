@@ -20,7 +20,7 @@ def train_model(X_train, y_train):
     model
         Trained machine learning model.
     """
-    model = LogisticRegression(random_state=42, max_iter=1000)
+    model = LogisticRegression(random_state=42)
     model.fit(X_train, y_train)
     return model
 
