@@ -1,6 +1,7 @@
 from train_model import data, cat_features, y_test, preds, model, X_test
 from ml.data import process_data
 from ml.model import compute_model_metrics, inference
+import pytest
 
 
 def test_process_data_shape():
@@ -21,15 +22,15 @@ def test_process_data_shape():
 # TODO: implement the second test. Change the function name and input as needed
 def test_compute_model_metrics():
     """
-    # Tests if the model metrics are all float values and are between 0.0 and 1.0.
+    # Tests if the model metrics are all float values and are the expected values.
     """
     p, r, fb = compute_model_metrics(y_test, preds)
     assert isinstance(p, float)
     assert isinstance(r, float)
     assert isinstance(fb, float)
-    assert 0.0 <= p <= 1.0
-    assert 0.0 <= r <= 1.0
-    assert 0.0 <= fb <= 1.0
+    assert p == pytest.approx(0.7616, abs=0.0001)
+    assert r == pytest.approx(0.2094, abs=0.0001)
+    assert fb == pytest.approx(0.3285, abs=0.0001)
 
 
 def test_prediction():
