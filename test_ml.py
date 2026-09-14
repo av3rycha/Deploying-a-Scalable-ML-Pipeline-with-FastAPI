@@ -22,15 +22,14 @@ def test_process_data_shape():
 # TODO: implement the second test. Change the function name and input as needed
 def test_compute_model_metrics():
     """
-    # Tests if the model metrics are all float values and are the expected values.
+    # Tests compute_model_metrics with known labels and predictions
     """
-    p, r, fb = compute_model_metrics(y_test, preds)
-    assert isinstance(p, float)
-    assert isinstance(r, float)
-    assert isinstance(fb, float)
-    assert p == pytest.approx(0.7337, abs=0.0001)
-    assert r == pytest.approx(0.5646, abs=0.0001)
-    assert fb == pytest.approx(0.6381, abs=0.0001)
+    y_true = [1, 1, 1, 0, 0, 0]
+    y_pred = [1, 1, 0, 1, 0, 0,]
+    p, r, fb = compute_model_metrics(y_true, y_pred)
+    assert p == pytest.approx(2 / 3, abs=0.0001)
+    assert r == pytest.approx(2 / 3, abs=0.0001)
+    assert fb == pytest.approx(2 / 3, abs=0.0001)
 
 
 def test_prediction():
